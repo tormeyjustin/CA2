@@ -8,11 +8,45 @@ package ca2;
  *
  * @author Justin
  */
-public class Employee {
 
-    /**
-     * @param args the command line arguments
-     */
+public class Employee {
+    // Constructor
+    private static int nextEmpNum = 1;
+    private String name;
+    private String email;
+    private int empNum;
+    
+    // Default
+    public Employee() {
+        this.name = "Name Surname";
+        this.email = "email@example.com";
+        this.empNum = nextEmpNum++;
+    }
+    // With parameters
+    public Employee(String name, String email) {
+        this.name = name;
+        this.email = email;
+        this.empNum = nextEmpNum++;
+    }
+    
+    // Getters
+    public String getName() {
+        return name;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public int getEmpNum() {
+        return empNum;
+    }
+    
+    // Setters
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public static void main(String[] args) {
         // TODO code application logic here
     }
