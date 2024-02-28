@@ -44,11 +44,16 @@ public class Employee {
     
     // Setters
     public void setEmail(String email) {
-        this.email = email;
+        if (email.length() <= 3) {
+            System.out.println("Email address must be longer than 3 characters.");
+        } else {
+            this.email = email;
+        }
+    
     }
-
-    public static void main(String[] args) {
-        // TODO code application logic here
+    
+    public static int getNextEmpNum() {
+        return nextEmpNum;
     }
     
 }
