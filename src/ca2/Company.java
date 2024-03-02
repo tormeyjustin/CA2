@@ -29,16 +29,18 @@ public class Company {
         this.staff = new ArrayList<Employee>();
     }
     
+    // Add new staff member
     private void addNewStaff(Employee employee) {
         this.staff.add(employee);     
     }
     
+    // Get the number of employees
     public int getStaffNumber() {
         return this.staff.size();
     }
     
     public void listEmployees(int minEmpNum) {
-        //Iterator
+        // Iterator
         Iterator<Employee> iterator = this.staff.iterator();
         while (iterator.hasNext()) {
             Employee emp = iterator.next();
