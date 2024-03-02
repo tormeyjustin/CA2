@@ -22,6 +22,7 @@ public class Employee {
         this.email = "email@example.com";
         this.empNum = nextEmpNum++;
     }
+    
     // With parameters
     public Employee(String name, String email) {
         this.name = name;
