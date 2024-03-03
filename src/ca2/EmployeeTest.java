@@ -37,7 +37,42 @@ public class EmployeeTest {
                 System.out.println(employee.getName());
             }
         }
-
+        
+        // More tests
+        // Create company
+        System.out.println("Create company");
+        Company testcorp = new Company();
+        
+        // Add Employees
+        System.out.println("> Add 2 Employees:");
+        testcorp.addNewStaff(emp1);
+        testcorp.addNewStaff(emp2);
+        
+        // Count employees
+        System.out.println("> Number of employees:");
+        System.out.println(testcorp.getStaffNumber());
+        System.out.println("> List employees:");
+        testcorp.listEmployees(0);
+        
+        // Remove employee
+        System.out.println("> Remove 1 Employee:");
+        testcorp.removeStaff(1);
+        System.out.println("> List employees:");
+        testcorp.listEmployees(0);
+        
+        // Add another
+        System.out.println("> Add 1 Employee:");
+        testcorp.addNewStaff(emp3);
+        testcorp.listEmployees(0);
+        
+        // Count employees
+        System.out.println("> Number of employees:");
+        System.out.println(testcorp.getStaffNumber());
+        
+        // Add a manager
+        Manager manager1 = new Manager(emp1, "username", "password");
+        System.out.println("> List employees:");
+        testcorp.listEmployees(0);
     }
 
 }

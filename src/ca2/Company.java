@@ -30,8 +30,13 @@ public class Company {
     }
     
     // Add new staff member
-    private void addNewStaff(Employee employee) {
+    public void addNewStaff(Employee employee) {
         this.staff.add(employee);     
+    }
+    
+    // Add a manager
+    public void addNewStaff(Manager manager, String username, String password) {
+        this.staff.add(manager); 
     }
     
     // Get the number of employees
@@ -39,15 +44,29 @@ public class Company {
         return this.staff.size();
     }
     
-    public void listEmployees(int minEmpNum) {
+    // Remove staff member
+    public void removeStaff(int empNum) {
         // Iterator
         Iterator<Employee> iterator = this.staff.iterator();
         while (iterator.hasNext()) {
             Employee emp = iterator.next();
-            if(emp.getEmpNum() > minEmpNum) {
+            if(emp.getEmpNum() == empNum) {
+                iterator.remove();
+            }
+        }
+    }
+    
+    // Print a list of all current employees
+    public void listEmployees(int minEmpNum) {
+        // Iterate over the ArrayList of employees
+        for (Employee emp : this.staff) {
+            // Check if the employee number
+            if (emp.getEmpNum() > minEmpNum) {
+                // Print the name of the employee
                 System.out.println(emp.getName());
             }
         }
-        
     }
+    
+
 }
