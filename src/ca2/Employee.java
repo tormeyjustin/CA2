@@ -26,8 +26,13 @@ public class Employee {
     // With parameters
     public Employee(String name, String email) {
         this.name = name;
-        this.email = email;
-        this.empNum = nextEmpNum++;
+        EmailValidator emailCheck = new EmailValidator();
+        if (emailCheck.isValid(email)) {
+            this.email = email;
+            this.empNum = nextEmpNum++;
+        } else {
+            throw new IllegalArgumentException("Invalid email address");
+        }        
     }
     
     // Getters
