@@ -70,9 +70,32 @@ public class EmployeeTest {
         System.out.println(testcorp.getStaffNumber());
         
         // Add a manager
-        Manager manager1 = new Manager(emp1, "username", "password");
+        Manager manager1 = new Manager(emp1, "Gnomeo", "smurf");
         System.out.println("> List employees:");
         testcorp.listEmployees(0);
+        
+        // Console Menu
+        ConsoleMenu menu = new ConsoleMenu(testcorp);
+        boolean authorised = menu.login();
+        if (authorised) {
+            int selectedOption = menu.options();
+            switch (selectedOption) {
+                case 1:
+                    System.out.println("Current staff:");
+                    menu.company.listEmployees(0);
+                    break;
+                case 2:
+                    menu.addStaff();
+                    System.out.println("Current staff:");
+                    menu.company.listEmployees(0);
+                    break;
+                case 3:
+                    menu.removeStaff();
+                    System.out.println("Current staff:");
+                    menu.company.listEmployees(0);
+                    break;
+            }
+        }
     }
 
 }
